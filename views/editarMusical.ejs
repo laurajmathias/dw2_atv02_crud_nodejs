@@ -1,0 +1,87 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="pagina-cadastro">
+
+    <section class="titulo-pagina">
+        <h1>Editar Musical</h1>
+        <p>Atualize as informações deste musical.</p>
+    </section>
+
+    <section class="formulario-musical">
+
+        <form action="/musicais/editar/<%= musical.id %>" method="POST">
+
+            <div class="campo-formulario">
+                <label for="nome">Nome:</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    value="<%= musical.nome %>"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="ano">Ano:</label>
+                <input
+                    type="number"
+                    id="ano"
+                    name="ano"
+                    value="<%= musical.ano %>"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="genero">Gênero:</label>
+                <input
+                    type="text"
+                    id="genero"
+                    name="genero"
+                    value="<%= musical.genero %>"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="sinopse">Sinopse:</label>
+                <textarea
+                    id="sinopse"
+                    name="sinopse"
+                    required
+                ><%= musical.sinopse %></textarea>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="imagem">Imagem:</label>
+                <input
+                    type="text"
+                    id="imagem"
+                    name="imagem"
+                    value="<%= musical.imagem %>"
+                    placeholder="Ex.: hamilton.jpg"
+                >
+            </div>
+
+            <div class="acoes-formulario">
+
+               <button type="submit" class="botao-salvar">
+                     Salvar alterações
+                </button>
+
+                <a href="/musicais" class="botao-voltar">
+                    Voltar para musicais
+                </a>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>

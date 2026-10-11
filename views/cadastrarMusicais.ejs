@@ -1,0 +1,83 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="pagina-cadastro">
+
+    <section class="titulo-pagina">
+        <h1>Cadastrar Musical</h1>
+        <p>Adicione um novo musical à sua coleção.</p>
+    </section>
+
+    <section class="formulario-musical">
+
+        <form action="/musicais/cadastrar" method="POST">
+
+            <div class="campo-formulario">
+                <label for="nome">Nome:</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="ano">Ano:</label>
+                <input
+                    type="number"
+                    id="ano"
+                    name="ano"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="genero">Gênero:</label>
+                <input
+                    type="text"
+                    id="genero"
+                    name="genero"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="sinopse">Sinopse:</label>
+                <textarea
+                    id="sinopse"
+                    name="sinopse"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="imagem">Imagem:</label>
+                <input
+                    type="text"
+                    id="imagem"
+                    name="imagem"
+                    placeholder="Ex.: hamilton.jpg"
+                >
+            </div>
+
+            <div class="acoes-formulario">
+
+                <button type="submit" class="botao-cadastrar">
+                    Cadastrar
+                </button>
+
+                <a href="/musicais" class="botao-voltar">
+                    Voltar para musicais
+                </a>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %> 

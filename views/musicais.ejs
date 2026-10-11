@@ -12,12 +12,16 @@
             Grandes histórias, diferentes épocas, o mesmo (meu kkk) encanto.
         </p>
 
+        <a href="/musicais/cadastrar" class="botao-cadastrar">
+            + Cadastrar Musical 
+        </a>
+
     </section>
 
 
     <section class="lista-musicais">
 
-        <% musicaisFavoritos.forEach((musical, index) => { %>
+       <% musicais.forEach((musical, index) => { %>
 
             <article class="musical-detalhe">
 
@@ -54,6 +58,14 @@
                     <p>
                         <%= musical.sinopse %>
                     </p>
+
+                    <a href="/musicais/editar/<%= musical.id %>" class="botao-editar">
+                        Editar
+                    </a>
+
+                    <a href="/musicais/excluir/<%= musical.id %>" class="botao-excluir">
+                        Excluir
+                    </a>
 
                 </div>
 

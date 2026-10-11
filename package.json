@@ -12,10 +12,10 @@
   },
   "license": "ISC",
   "author": "Laura Julia Mathias Amaral",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "ejs": "^7.0.1",

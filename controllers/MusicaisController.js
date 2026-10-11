@@ -1,59 +1,138 @@
 import express from "express";
+import Musical from "../models/Musical.js";
 
 const route = express.Router();
 
-const musicaisFavoritos = [
+// Listar musicais
+route.get("/", async (req, res) => {
 
-    {
-        id: 1,
-        nome: "Death Becomes Her",
-        ano: 2024,
-        genero: "Comédia Musical",
-        sinopse: "Uma comédia musical que mistura humor negro e elementos de fantasia, explorando a vida após a morte de uma maneira única e divertida.", 
-        imagem: "dbh.png"
-    },
+    try {
 
-    {
-        id: 2,
-        nome: "7 Mulheres e um Mistério",
-        ano: 2026,
-        genero: "Comédia Musical, Suspense",
-        sinopse: "Um musical de suspense que combina comédia e drama em uma história envolvente.", 
-        imagem: "7mulheres.jpg"
-    },
+        const musicais = await Musical.findAll();
 
-    {
-        id: 3,
-        nome: "Hamilton",
-        ano: 2015,
-        genero: "Biográfico / Histórico",
-        sinopse: "Um musical que retrata a vida de Alexander Hamilton, um dos fundadores dos Estados Unidos.",
-        imagem: "hamilton.jpg"
-    },
+        res.render("musicais", { musicais });
 
-    {
-        id: 4,
-        nome: "Chicago",
-        ano: 1975,
-        genero: "Musical Satírico",
-        sinopse: "Um musical satírico que critica a sociedade e a justiça no mundo do entretenimento.",
-        imagem: "chicago.jpeg"
-    },
+    } catch (error) {
 
-    {
-        id: 5,
-        nome: "Mean Girls",
-        ano: 2018,
-        genero: "Comédia Musical",
-        sinopse: "Uma comédia musical que aborda temas como popularidade e amizade em uma escola secundária.",
-        imagem: "meanGirls.webp"
+        console.error("Erro ao buscar musicais:", error);
+        res.status(500).send("Erro ao buscar musicais.");
+
     }
 
-];
+});
 
-route.get('/', (req, res) => {
+// Formulário de cadastro
+route.get("/cadastrar", (req, res) => {
 
-    res.render('musicais', { musicaisFavoritos });
+    res.render("cadastrarMusicais");
+
+});
+
+// Cadastrar musical
+route.post("/cadastrar", async (req, res) => {
+
+    try {
+
+        const { nome, ano, genero, sinopse, imagem } = req.body;
+
+        await Musical.create({
+            nome,
+            ano,
+            genero,
+            sinopse,
+            imagem
+        });
+
+        res.redirect("/musicais");
+
+    } catch (error) {
+
+        console.error("Erro ao cadastrar musical:", error);
+        res.status(500).send("Erro ao cadastrar musical.");
+
+    }
+
+});
+
+// Formulário de edição
+
+// Formulário de edição
+route.get("/editar/:id", async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+
+        const musical = await Musical.findByPk(id);
+
+        res.render("editarMusical", { musical });
+
+    } catch (error) {
+
+        console.error("Erro ao buscar musical:", error);
+        res.status(500).send("Erro ao buscar musical.");
+
+    }
+
+});
+
+// Salvar alterações do musical
+route.post("/editar/:id", async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+
+        const { nome, ano, genero, sinopse, imagem } = req.body;
+
+        await Musical.update(
+            {
+                nome,
+                ano,
+                genero,
+                sinopse,
+                imagem
+            },
+            {
+                where: {
+                    id: id
+                }
+            }
+        );
+
+        res.redirect("/musicais");
+
+    } catch (error) {
+
+        console.error("Erro ao editar musical:", error);
+        res.status(500).send("Erro ao editar musical.");
+
+    }
+
+});
+
+// Excluir Musical
+
+route.get("/excluir/:id", async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+
+        await Musical.destroy({
+            where: {
+                id: id
+            }
+        });
+
+        res.redirect("/musicais");
+
+    } catch (error) {
+
+        console.error("Erro ao excluir musical:", error);
+        res.status(500).send("Erro ao excluir musical.");
+
+    }
 
 });
 
