@@ -1,0 +1,559 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #21133F;
+    padding: 15px 40px;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo img {
+    width: 140px;
+    height: auto;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #DAB875;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F4EAF8;
+    color: #21133F;
+    font-family: Georgia, serif;
+}
+
+.hero {
+    height: 500px;
+
+    background-image: url("/Images/broadway.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+
+    max-width: 500px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: white;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border: 1px solid #DAB875;
+    border-radius: 25px;
+
+    color: #DAB875;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #DAB875;
+    color: #21133F;
+}
+
+.favoritos {
+    padding: 60px 50px;
+}
+
+.favoritos h2 {
+    text-align: center;
+
+    font-size: 32px;
+
+    color: #3D0061;
+
+    margin-bottom: 40px;
+}
+
+.cards-musicais {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-musical {
+    width: 320px;
+
+    background-color: #21133F;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(33, 19, 63, 0.25);
+}
+
+.card-musical img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    color: #FFFFFF;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #DAB875;
+
+    margin-bottom: 20px;
+}
+
+.card-content a {
+    color: #DAB875;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.card-musical {
+    transition: transform 0.3s;
+}
+
+.card-musical:hover {
+    transform: translateY(-5px);
+}
+
+.pagina-musicais {
+    background-color: #F4EAF8;
+    padding-bottom: 80px;
+}
+
+.titulo-pagina {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.titulo-pagina h1 {
+    color: #3D0061;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.titulo-pagina p {
+    color: #21133F;
+    font-size: 18px;
+}
+
+.lista-musicais {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.musical-detalhe {
+    display: flex;
+    align-items: stretch;
+
+    margin-bottom: 35px;
+
+    background-color: #21133F;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(33, 19, 63, 0.2);
+}
+
+.musical-imagem {
+    width: 45%;
+}
+
+.musical-imagem img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 320px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.musical-info {
+    width: 55%;
+    padding: 40px;
+    color: white;
+}
+
+.numero-musical {
+    color: #DAB875;
+    font-size: 20px;
+}   
+
+.musical-info h2 {
+    color: #E38AD0;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.periodo {
+    color: #DAB875;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.genero {
+    color: #D8CFE2;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.musical-info h3 {
+    color: #DAB875;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.musical-info p {
+    line-height: 1.6;
+}
+
+.musical-info h3 {
+    color: #DAB875;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.musical-info p {
+    line-height: 1.6;
+}
+
+.musical-detalhe:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* ============================= */
+/* PÁGINA DE ARTISTAS */
+/* ============================= */
+
+.pagina-artistas {
+    background-color: #F4EAF8;
+    padding-bottom: 80px;
+}
+
+.artistas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.grupo-artistas {
+    margin-bottom: 60px;
+}
+
+.grupo-artistas h2 {
+    color: #3D0061;
+    font-size: 28px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #DAB875;
+}
+
+/* GRID DOS ARTISTAS */
+
+.cards-artistas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+
+.card-artista {
+    background-color: #21133F;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(33, 19, 63, 0.2);
+    transition: transform 0.3s;
+}
+
+.card-artista:hover {
+    transform: translateY(-5px);
+}
+
+/* FOTO */
+
+.card-artista img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* INFORMAÇÕES */
+
+.card-artista-conteudo {
+    padding: 18px;
+}
+
+.card-artista-conteudo h3 {
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.card-artista-conteudo .personagem {
+    color: #E38AD0;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.card-artista-conteudo .tipo-vocal {
+    color: #DAB875;
+    font-size: 13px;
+}
+
+/* ============================= */
+/* PÁGINA DE CRÍTICA */
+/* ============================= */
+
+.pagina-critica {
+    background-color: #F4EAF8;
+    padding-bottom: 80px;
+}
+
+.criticas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* ITEM DA CRÍTICA */
+
+.critica-item {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 35px;
+    background-color: #21133F;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(33, 19, 63, 0.2);
+}
+
+/* IMAGEM */
+
+.critica-capa {
+    width: 35%;
+}
+
+.critica-capa img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+/* CONTEÚDO */
+
+.critica-conteudo {
+    width: 65%;
+    padding: 40px;
+    color: white;
+}
+
+.critica-conteudo h2 {
+    color: #E38AD0;
+    font-size: 32px;
+    margin: 10px 0 20px;
+}
+
+.texto-critica {
+    line-height: 1.7;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+/* INFORMAÇÕES */
+
+.dados-critica {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dados-critica div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dados-critica strong {
+    color: #DAB875;
+    font-size: 14px;
+}
+
+.dados-critica span {
+    color: #D8CFE2;
+    font-size: 14px;
+}
+
+
+/* ============================= */
+/* TABELA */
+/* ============================= */
+
+.tabela-criticas {
+    max-width: 1200px;
+    margin: 70px auto 0;
+    padding: 0 30px;
+}
+
+.tabela-criticas h2 {
+    color: #3D0061;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.tabela-criticas table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #21133F;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabela-criticas th {
+    background-color: #3D0061;
+    color: #DAB875;
+    padding: 15px;
+    text-align: left;
+}
+
+.tabela-criticas td {
+    padding: 15px;
+    border-top: 1px solid rgba(216, 207, 226, 0.2);
+    line-height: 1.5;
+}
+
+.tabela-criticas tr:hover {
+    background-color: #2D1B4A;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.footer {
+    background-color: #21133F;
+    color: white;
+    margin-top: 0;
+}
+
+.footer-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-info {
+    border-left: 1px solid #DAB875;
+    padding-left: 25px;
+}
+
+.footer-info p {
+    color: #DAB875;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.footer-info span {
+    color: #D8CFE2;
+    font-size: 14px;
+}
+
+.footer-direitos {
+    border-top: 1px solid rgba(216, 207, 226, 0.2);
+    text-align: center;
+    padding: 15px;
+}
+
+.footer-direitos p {
+    color: #D8CFE2;
+    font-size: 13px;
+}

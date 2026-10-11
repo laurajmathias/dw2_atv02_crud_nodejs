@@ -1,0 +1,30 @@
+{
+  "name": "dw2_atv2_nodejs_crud",
+  "version": "1.0.0",
+  "description": "Código da Atividade 2 de Desenvolvimento Web II - Crud e Nodejs - para avaliação ",
+  "homepage": "https://github.com/laurajmathias/dw2_atv02_crud_nodejs#readme",
+  "bugs": {
+    "url": "https://github.com/laurajmathias/dw2_atv02_crud_nodejs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurajmathias/dw2_atv02_crud_nodejs.git"
+  },
+  "license": "ISC",
+  "author": "Laura Julia Mathias Amaral",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^7.0.1",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.5",
+    "nodejs": "^0.0.0",
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,130 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="pagina-critica">
+
+    <section class="titulo-pagina">
+
+        <h1>O que a crítica diz?</h1>
+
+        <p>
+            Uma visão sobre os musicais que fazem parte da nossa seleção.
+        </p>
+
+    </section>
+
+
+    <section class="criticas-container">
+
+        <% criticas.forEach((critica) => { %>
+
+            <article class="critica-item">
+
+                <div class="critica-capa">
+
+                    <img 
+                        src="/Images/<%= critica.nome === 'Death Becomes Her' ? 'dbh.png' : 
+                                    critica.nome === '7 Mulheres e um Mistério' ? '7mulheres.jpg' : 
+                                    critica.nome === 'Hamilton' ? 'hamilton.jpg' : 
+                                    critica.nome === 'Chicago' ? 'chicago.jpeg' : 
+                                    'meanGirls.webp' %>"
+                        alt="<%= critica.nome %>"
+                    >
+
+                </div>
+
+                <div class="critica-conteudo">
+
+                    <span class="numero-musical">
+                        <%= String(critica.id).padStart(2, '0') %>
+                    </span>
+
+                    <h2>
+                        <%= critica.nome %>
+                    </h2>
+
+                    <p class="texto-critica">
+                        <%= critica.critica %>
+                    </p>
+
+                    <div class="dados-critica">
+
+                        <div>
+                            <strong>Nota</strong>
+                            <span><%= critica.nota %></span>
+                        </div>
+
+                        <div>
+                            <strong>Indicações</strong>
+                            <span><%= critica.indicações %></span>
+                        </div>
+
+                        <div>
+                            <strong>Premiações</strong>
+                            <span><%= critica.premiações %></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        <% }); %>
+
+    </section>
+
+
+    <!-- TABELA EXIGIDA PELA ATIVIDADE -->
+
+    <section class="tabela-criticas">
+
+        <h2>Resumo das críticas</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Musical</th>
+                    <th>Crítica</th>
+                    <th>Nota</th>
+                    <th>Indicações</th>
+                    <th>Premiações</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <% criticas.forEach((critica) => { %>
+
+                    <tr>
+
+                        <td><%= critica.id %></td>
+
+                        <td><%= critica.nome %></td>
+
+                        <td><%= critica.critica %></td>
+
+                        <td><%= critica.nota %></td>
+
+                        <td><%= critica.indicações %></td>
+
+                        <td><%= critica.premiações %></td>
+
+                    </tr>
+
+                <% }); %>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>

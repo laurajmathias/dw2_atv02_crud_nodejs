@@ -1,0 +1,68 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="pagina-musicais">
+
+    <section class="titulo-pagina">
+
+        <h1>Musicais</h1>
+
+        <p>
+            Grandes histórias, diferentes épocas, o mesmo (meu kkk) encanto.
+        </p>
+
+    </section>
+
+
+    <section class="lista-musicais">
+
+        <% musicaisFavoritos.forEach((musical, index) => { %>
+
+            <article class="musical-detalhe">
+
+                <div class="musical-imagem">
+
+                    <img 
+                        src="/Images/<%= musical.imagem %>" 
+                        alt="<%= musical.nome %>"
+                    >
+
+                </div>
+
+
+                <div class="musical-info">
+
+                    <span class="numero-musical">
+                        <%= String(index + 1).padStart(2, '0') %>
+                    </span>
+
+                    <h2>
+                        <%= musical.nome %>
+                    </h2>
+
+                    <p class="periodo">
+                        <%= musical.ano %>
+                    </p>
+
+                    <p class="genero">
+                        <%= musical.genero %>
+                    </p>
+
+                    <h3>Sinopse</h3>
+
+                    <p>
+                        <%= musical.sinopse %>
+                    </p>
+
+                </div>
+
+            </article>
+
+        <% }); %>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>

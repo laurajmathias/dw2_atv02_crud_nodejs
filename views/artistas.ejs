@@ -1,0 +1,69 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="pagina-artistas">
+
+    <section class="titulo-pagina">
+
+        <h1>Principais Artistas</h1>
+
+        <p>
+            Conheça alguns dos talentos por trás dos grandes musicais.
+        </p>
+
+    </section>
+
+
+    <section class="artistas-container">
+
+        <% const musicais = ["Death Becomes Her", "7 Mulheres e um Mistério", "Hamilton", "Chicago", "Mean Girls"]; %>
+
+        <% musicais.forEach((nomeMusical) => { %>
+
+            <section class="grupo-artistas">
+
+                <h2><%= nomeMusical %></h2>
+
+                <div class="cards-artistas">
+
+                    <% artistasFavoritos
+                        .filter((artista) => artista.musical === nomeMusical)
+                        .forEach((artista) => { %>
+
+                        <article class="card-artista">
+
+                            <img 
+                                src="/Images/<%= artista.imagem %>" 
+                                alt="<%= artista.nome %>"
+                            >
+
+                            <div class="card-artista-conteudo">
+
+                                <h3><%= artista.nome %></h3>
+
+                                <p class="personagem">
+                                    <%= artista.personagem %>
+                                </p>
+
+                                <p class="tipo-vocal">
+                                    <%= artista.tipo_vocal %>
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    <% }); %>
+
+                </div>
+
+            </section>
+
+        <% }); %>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>
