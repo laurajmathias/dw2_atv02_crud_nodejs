@@ -12,12 +12,15 @@
             Conheça alguns dos talentos por trás dos grandes musicais.
         </p>
 
-    </section>
+        <a href="/artistas/cadastrar" class="botao-cadastrar">
+            + Cadastrar Artista
+        </a>
 
+    </section>
 
     <section class="artistas-container">
 
-        <% const musicais = ["Death Becomes Her", "7 Mulheres e um Mistério", "Hamilton", "Chicago", "Mean Girls"]; %>
+        <% const musicais = ["Death Becomes Her", "Hamilton", "Chicago"]; %>
 
         <% musicais.forEach((nomeMusical) => { %>
 
@@ -27,20 +30,22 @@
 
                 <div class="cards-artistas">
 
-                    <% artistasFavoritos
+                    <% artistas
                         .filter((artista) => artista.musical === nomeMusical)
                         .forEach((artista) => { %>
 
                         <article class="card-artista">
 
-                            <img 
-                                src="/Images/<%= artista.imagem %>" 
+                            <img
+                                src="/Images/<%= artista.imagem %>"
                                 alt="<%= artista.nome %>"
                             >
 
                             <div class="card-artista-conteudo">
 
-                                <h3><%= artista.nome %></h3>
+                                <h3>
+                                    <%= artista.nome %>
+                                </h3>
 
                                 <p class="personagem">
                                     <%= artista.personagem %>
@@ -49,6 +54,24 @@
                                 <p class="tipo-vocal">
                                     <%= artista.tipo_vocal %>
                                 </p>
+
+                                <div class="acoes-artista">
+
+                                    <a
+                                        href="/artistas/editar/<%= artista.id %>"
+                                        class="botao-editar"
+                                    >
+                                        Editar
+                                    </a>
+
+                                    <a
+                                        href="/artistas/excluir/<%= artista.id %>"
+                                        class="botao-excluir"
+                                    >
+                                        Excluir
+                                    </a>
+
+                                </div>
 
                             </div>
 

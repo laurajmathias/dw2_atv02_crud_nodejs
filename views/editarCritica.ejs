@@ -1,0 +1,122 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="pagina-cadastro">
+
+    <section class="titulo-pagina">
+
+        <h1>Editar Crítica</h1>
+
+        <p>
+            Atualize as informações desta crítica.
+        </p>
+
+    </section>
+
+
+    <section class="formulario-musical">
+
+        <form
+            action="/criticas/editar/<%= critica.id %>"
+            method="POST"
+        >
+
+            <div class="campo-formulario">
+
+                <label for="nome">Musical:</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    value="<%= critica.nome %>"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="critica">Crítica:</label>
+
+                <textarea
+                    id="critica"
+                    name="critica"
+                    required
+                ><%= critica.critica %></textarea>
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="nota">Nota:</label>
+
+                <input
+                    type="text"
+                    id="nota"
+                    name="nota"
+                    value="<%= critica.nota %>"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="indicações">Indicações:</label>
+
+                <input
+                    type="text"
+                    id="indicações"
+                    name="indicações"
+                    value="<%= critica.indicações %>"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="premiações">Premiações:</label>
+
+                <input
+                    type="text"
+                    id="premiações"
+                    name="premiações"
+                    value="<%= critica.premiações %>"
+                    required
+                >
+
+            </div>
+
+
+            <div class="acoes-formulario">
+
+                <button
+                    type="submit"
+                    class="botao-salvar"
+                >
+                    Salvar alterações
+                </button>
+
+                <a
+                    href="/criticas"
+                    class="botao-voltar"
+                >
+                    Voltar para críticas
+                </a>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>

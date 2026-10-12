@@ -1,0 +1,124 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="pagina-cadastro">
+
+    <section class="titulo-pagina">
+
+        <h1>Editar Artista</h1>
+
+        <p>
+            Atualize as informações deste artista.
+        </p>
+
+    </section>
+
+
+    <section class="formulario-musical">
+
+        <form
+            action="/artistas/editar/<%= artista.id %>"
+            method="POST"
+        >
+
+            <div class="campo-formulario">
+
+                <label for="nome">Nome:</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    value="<%= artista.nome %>"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="personagem">Personagem:</label>
+
+                <input
+                    type="text"
+                    id="personagem"
+                    name="personagem"
+                    value="<%= artista.personagem %>"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="musical">Musical:</label>
+
+                <input
+                    type="text"
+                    id="musical"
+                    name="musical"
+                    value="<%= artista.musical %>"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="tipo_vocal">Tipo vocal:</label>
+
+                <input
+                    type="text"
+                    id="tipo_vocal"
+                    name="tipo_vocal"
+                    value="<%= artista.tipo_vocal %>"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="imagem">Imagem:</label>
+
+                <input
+                    type="text"
+                    id="imagem"
+                    name="imagem"
+                    value="<%= artista.imagem %>"
+                    placeholder="Ex.: megan.jpeg"
+                >
+
+            </div>
+
+
+            <div class="acoes-formulario">
+
+                <button
+                    type="submit"
+                    class="botao-salvar"
+                >
+                    Salvar alterações
+                </button>
+
+                <a
+                    href="/artistas"
+                    class="botao-voltar"
+                >
+                    Voltar para artistas
+                </a>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>

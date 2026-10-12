@@ -1,0 +1,115 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="pagina-cadastro">
+
+    <section class="titulo-pagina">
+
+        <h1>Cadastrar Artista</h1>
+
+        <p>
+            Adicione um novo artista à sua coleção de musicais.
+        </p>
+
+    </section>
+
+    <section class="formulario-musical">
+
+        <form action="/artistas/cadastrar" method="POST">
+
+            <div class="campo-formulario">
+
+                <label for="nome">Nome:</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="personagem">Personagem:</label>
+
+                <input
+                    type="text"
+                    id="personagem"
+                    name="personagem"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="musical">Musical:</label>
+
+                <input
+                    type="text"
+                    id="musical"
+                    name="musical"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="tipo_vocal">Tipo vocal:</label>
+
+                <input
+                    type="text"
+                    id="tipo_vocal"
+                    name="tipo_vocal"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-formulario">
+
+                <label for="imagem">Imagem:</label>
+
+                <input
+                    type="text"
+                    id="imagem"
+                    name="imagem"
+                    placeholder="Ex.: megan.jpeg"
+                >
+
+            </div>
+
+
+            <div class="acoes-formulario">
+
+                <button
+                    type="submit"
+                    class="botao-cadastrar"
+                >
+                    Cadastrar
+                </button>
+
+                <a
+                    href="/artistas"
+                    class="botao-voltar"
+                >
+                    Voltar para artistas
+                </a>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>
